@@ -1,0 +1,627 @@
+/* ==================== CSS VARIABLES ==================== */
+:root {
+  --color-primary: #0057ff;
+  --color-primary-dark: #0051e8;
+  --color-secondary: #6366f1;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-light: #f1f5ff;
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 3rem;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 20px rgba(0, 87, 255, 0.15);
+  --shadow-xl: 0 12px 28px rgba(0, 87, 255, 0.2);
+}
+
+/* ==================== TODAY PAGE ==================== */
+.today-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== GREETING SECTION ==================== */
+.greeting-section {
+  margin: var(--spacing-2xl) 0;
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.greeting-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+}
+
+.greeting-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  flex-shrink: 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.greeting-content {
+  flex: 1;
+}
+
+.greeting-content h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #78350f;
+  margin-bottom: var(--spacing-sm);
+}
+
+.greeting-text {
+  font-size: 1rem;
+  color: #92400e;
+  font-weight: 500;
+}
+
+/* ==================== QUOTE SECTION ==================== */
+.quote-section {
+  margin: var(--spacing-2xl) 0;
+  animation: fadeIn 0.5s ease 0.1s both;
+}
+
+.quote-card {
+  position: relative;
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: var(--radius-lg);
+  color: white;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.quote-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+.quote-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 2;
+}
+
+.quote-icon {
+  opacity: 0.8;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.quote-emoji {
+  font-size: 2.5rem;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.quote-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: var(--spacing-xl) 0;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-author {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-indicator {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.quote-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* ==================== STATS SECTION ==================== */
+.stats-section {
+  margin: var(--spacing-2xl) 0;
+  animation: fadeIn 0.5s ease 0.2s both;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.stat-icon.active {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+.stat-icon.completed {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.stat-icon.streak {
+  background: linear-gradient(135deg, #0057ff, #6366f1);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+/* ==================== PROGRESS SECTION ==================== */
+.progress-wrapper {
+  margin-top: var(--spacing-xl);
+}
+
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.progress-info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+}
+
+.progress-text {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 20px rgba(0, 87, 255, 0.4);
+}
+
+/* ==================== TASK INPUT SECTION ==================== */
+.task-input-section.today-input {
+  margin: var(--spacing-2xl) 0;
+  animation: fadeIn 0.5s ease 0.3s both;
+}
+
+.add-task-form.today-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-wrapper {
+  display: flex;
+  gap: var(--spacing-md);
+  background: var(--color-bg-primary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-wrapper:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 87, 255, 0.1);
+}
+
+.add-task-input.today-input-field {
+  flex: 1;
+  font-size: 1rem;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.add-task-input.today-input-field::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.btn.today-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 87, 255, 0.3);
+  white-space: nowrap;
+}
+
+.btn.today-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 87, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn.today-btn:active {
+  transform: scale(0.95);
+}
+
+/* ==================== TASKS SECTION ==================== */
+.today-tasks-section {
+  margin: var(--spacing-2xl) 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title svg {
+  color: var(--color-primary);
+}
+
+.tasks-container {
+  animation: fadeIn 0.5s ease 0.4s both;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.task-wrapper {
+  animation: slideInUp 0.4s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== EMPTY STATE ==================== */
+.empty-today-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  text-align: center;
+  animation: fadeIn 0.5s ease 0.4s both;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f1f5ff 0%, #e0e7ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xl);
+  animation: bounce 0.6s ease;
+}
+
+.empty-today-state h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.empty-today-state p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  .today-page {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .greeting-card {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl);
+  }
+
+  .greeting-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .greeting-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .greeting-text {
+    font-size: 0.9rem;
+  }
+
+  .progress-info {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .progress-stat {
+    padding: var(--spacing-md);
+  }
+
+  .form-input-group {
+    flex-direction: column;
+    padding: var(--spacing-md);
+  }
+
+  .add-task-input.today-input-field {
+    padding: var(--spacing-md);
+  }
+
+  .btn.today-btn {
+    width: 100%;
+  }
+
+  .empty-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .empty-state-title {
+    font-size: 1.25rem;
+  }
+
+  .empty-state-text {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .today-page {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .greeting-card {
+    padding: var(--spacing-lg);
+  }
+
+  .greeting-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .greeting-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .progress-bar-labels {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .form-input-group {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+
+  .add-task-input {
+    font-size: 0.95rem;
+  }
+
+  .btn.today-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .quote-card {
+    padding: var(--spacing-xl);
+  }
+
+  .quote-text {
+    font-size: 1.05rem;
+  }
+
+  .quote-emoji {
+    font-size: 2rem;
+  }
+
+  .empty-state {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+}
+/* ==================== TODAY PAGE SAFETY FIX ==================== */
+
+/* Ensure today page never goes under bottom navigation */
+@media (max-width: 768px) {
+  .today-page {
+    padding-bottom: 110px; /* bottom nav + breathing space */
+  }
+}
+
+/* Animation + fixed nav conflict prevention */
+.today-page,
+.today-page * {
+  will-change: transform;
+}
+

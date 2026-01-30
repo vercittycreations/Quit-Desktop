@@ -1,0 +1,55 @@
+.note-item {
+  padding: var(--spacing-lg);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.note-item:hover {
+  border-color: var(--color-brand);
+  box-shadow: 0 4px 12px var(--color-shadow-hover);
+}
+
+.note-item.editing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.note-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+.note-title-input {
+  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.note-preview {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  font-size: 0.95rem;
+}
+
+.note-content-input {
+  font-family: var(--font-body);
+  line-height: 1.8;
+  min-height: 200px;
+}
+
+.note-footer {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.note-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
