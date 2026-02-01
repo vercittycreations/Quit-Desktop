@@ -137,11 +137,11 @@
   }
 }
 @media (max-width: 768px) {
-  .app-main,
-  main {
+  .app-main {
     padding-bottom: 90px !important;
   }
 }
+
 
 /* ================= GLOBAL LAYOUT SAFETY ================= */
 @media (min-width: 769px) {

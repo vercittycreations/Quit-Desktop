@@ -19,6 +19,8 @@ export default function App() {
       <AuthProvider>
         <div className="app-container">
           <Navigation />
+
+          {/* yahi wrapper sab pages ke liye nav-safe area hai */}
           <main className="app-main">
             <Routes>
               {/* Public routes */}

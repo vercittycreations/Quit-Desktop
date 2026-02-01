@@ -198,7 +198,8 @@ export default function Today() {
       {/* Add Task Form */}
       <div className="task-input-section today-input">
         <form onSubmit={handleAddTask} className="add-task-form today-form">
-          <div className="form-wrapper">
+          {/* UPDATED: helper class form-input-group add kiya responsive CSS ke liye */}
+          <div className="form-wrapper form-input-group">
             <input
               type="text"
               value={input}
