@@ -1,0 +1,228 @@
+/* ROOT LAYOUT */
+.landing-root {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(251, 191, 119, 0.12), transparent 60%),
+    linear-gradient(180deg, #0b1020 0%, #0a0f1c 40%, #070b16 100%);
+  color: var(--ink-main);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* subtle grain */
+.landing-root::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.25;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+}
+
+/* DESIGN TOKENS */
+:root {
+  --font-heading: 'Caveat', system-ui;
+  --font-body: 'Crimson Text', Georgia, serif;
+
+  --bg-deep: #070b16;
+  --bg-soft: #0f172a;
+
+  --ink-main: #f1eee9;
+  --ink-soft: #c7c2b8;
+  --ink-muted: #8f8a80;
+
+  --accent-amber: #fbbf77;
+  --accent-amber-deep: #e2a24c;
+  --accent-indigo: #818cf8;
+
+  --border-soft: rgba(241, 238, 233, 0.08);
+}
+
+body {
+  /* margin: 0; */
+  font-family: var(--font-body);
+}
+
+/* HEADER */
+.landing-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 1.6rem 2.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 11, 22, 0.85),
+    rgba(7, 11, 22, 0.35),
+    transparent
+  );
+  backdrop-filter: blur(10px);
+}
+
+.landing-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-amber);
+}
+
+/* MAIN */
+.landing-main {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2.5rem 4rem;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+/* SECTIONS */
+.section {
+  margin: 4rem 0;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--accent-indigo);
+  margin-bottom: 1.4rem;
+  letter-spacing: 0.06em;
+}
+
+/* HERO */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 1.35;
+  color: var(--ink-main);
+  max-width: 19ch;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 38ch;
+  line-height: 1.8;
+  margin-bottom: 2.4rem;
+}
+
+.hero-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+
+/* CTA */
+.hero-cta {
+  border: none;
+  cursor: pointer;
+  padding: 0.85rem 1.9rem;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: #0b0b10;
+  background: linear-gradient(
+    135deg,
+    var(--accent-amber) 0%,
+    var(--accent-amber-deep) 100%
+  );
+  border-radius: 999px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* HOW */
+.how-step h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--ink-main);
+}
+
+.how-step p {
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+/* WHY */
+.why-text p {
+  color: var(--ink-soft);
+  line-height: 1.9;
+}
+
+/* PRIVACY */
+.privacy-grid {
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  padding: 1.9rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem 2.4rem;
+}
+
+.privacy-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--ink-main);
+}
+
+.privacy-item p {
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+/* WHO */
+.who-list p {
+  color: var(--ink-soft);
+  line-height: 1.85;
+}
+
+/* FINAL */
+.final-line {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  color: var(--ink-main);
+}
+
+/* ANIMATIONS */
+.fade-in-slow {
+  animation: fadeInSlow 900ms ease-out both;
+}
+
+.fade-in-soft {
+  animation: fadeInSoft 900ms ease-out both;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .landing-main {
+    padding: 2.3rem 1.5rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .privacy-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+}

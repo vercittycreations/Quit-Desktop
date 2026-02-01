@@ -24,7 +24,6 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
-        // 🔥 STEP 4.4 — Firestore profile auto-create
         const userRef = doc(db, 'users', currentUser.uid)
         const snap = await getDoc(userRef)
 
@@ -74,10 +73,7 @@ export function AuthProvider({ children }) {
   }
 
   if (initializing) {
-    if (initializing) {
-  return <Loading text="Preparing your workspace…" />
-}
-
+    return <Loading text="Preparing your workspace…" />
   }
 
   return (

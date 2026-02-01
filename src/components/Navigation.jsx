@@ -7,10 +7,10 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   const links = [
-    { path: '/', label: 'Today' },
-    { path: '/tasks', label: 'Tasks' },
-    { path: '/notes', label: 'Notes' },
-    { path: '/profile', label: 'Profile' }
+    { path: '/app', label: 'Today' },
+    { path: '/app/tasks', label: 'Tasks' },
+    { path: '/app/notes', label: 'Notes' },
+    { path: '/app/profile', label: 'Profile' }
   ]
 
   const isActive = (path) => location.pathname === path
@@ -18,13 +18,14 @@ export default function Navigation() {
   return (
     <nav className="navigation">
       <div className="nav-header">
-        <Link to="/" className="nav-brand">
+        <Link to="/app" className="nav-brand">
           ◆
         </Link>
         <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
           ☰
         </button>
       </div>
+
       <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
         {links.map(link => (
           <li key={link.path}>
